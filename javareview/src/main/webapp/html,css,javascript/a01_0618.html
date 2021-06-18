@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+<!-- 
+# 기본 태그 
+p : 문단을 나눌때 사용
+hr : 수평선 긋기
+br : 줄바꿈 처리
+block 태그
+	해당 태그와 함께 줄바꿈 처리가 일어나는 태그
+	p, h1~h6, div(구영지정), ul/li
+inline 태그
+	택스트 꾸미기 관련 태그로 줄바꿈 처리가 일어나지 않는 태그
+	a, img, span
+-->
+<h2>다양한 태그들</h2>
+<p>문단을 나누고 block형식인 p태그</p>
+<hr>수평선,줄바꿈
+<br>
+<div id="div1">
+구역지정
+	<ul>
+		<li>리스트1</li>
+		<li>리스트2</li>
+		<li>리스트3</li>
+	</ul>
+</div>
+<a href="www.naver.com">링크태그-네이버로 이동</a><br>
+<img src="media/apple.png" width="100" height="100">
+<h3 onclick="addTag(this)">block 태그 추가</h3>
+</body>
+<script type="text/javascript">
+	// document.querySelector : 특정 태그를 가져옴
+	// 태그를 불러올때 태그명, #id명, .class명
+	var h2 = document.querySelector("h2");
+	// 클릭시 일어나는 이벤트
+	h2.onclick=function(){
+		this.style.backgroundColor="pink";
+	}
+	var div1 = document.querySelector("#div1");
+	div1.style.backgroundColor = "yellow";
+	//태그에 onclick이 존재할때 일어나는 이벤트
+	function addTag(obj){
+		obj.innerHTML += "<h5>h5</h5>";
+	}
+</script>
+</html>

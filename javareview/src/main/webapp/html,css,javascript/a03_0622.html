@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<table id="tab" border>
+	<tr><td>0</td></tr>
+</table>
+<input id="row" type="button" value="행추가">
+<input id="col" type="button" value="열추가"><br>
+<!-- 
+hyperLink
+다른 외부페이지나 내부서베에 존재하는 페이지로 이동
+img를 넣어서 페이지 이동 가능
+-->
+<h3>링크 만들기</h3>
+<hr>
+포털 사이트
+<ul>
+	<li><a href="http://www.naver.com">네이버</a></li>
+	<li><a href="http://www.daum.net">다음</a></li>
+</ul>
+신문 사이트
+<ul>
+	<li><a href="http://www.etnews.com">
+		<img src="media/iconetnews.png" alt="전자신문"></a></li>
+	<li><a href="http://www.chosun.net">
+		<img src="media/iconchosun.png" alt="조선일보"></a></li>
+</ul>
+내부사이트
+<ul>
+	<li><a href="a01_basic.html">첫 페이지로 이동</a></li>
+	<li><a href="javascript:call('홍길동')">js 함수 호출</a></li>
+	<li><a href="javascript:go()">js 함수로 페이지 이동</a></li>
+</ul>
+<!-- 
+iframe
+한 페이지 안에 지정한 html 출력
+속성
+name : a태그의 target에 넣는값으로 링크 클릭시 해당 페이지로 출력
+srcdoc : 해당 범위에서 새로 html을 만들어서 출력
+-->
+<iframe src="http://www.w3.org"></iframe>
+<iframe srcdoc="<html><body><h3>iframe의 srcdoc</h3></html>"></iframe>
+<hr>
+<a href="login.html" target="frame">로그인</a>
+<a href="prod1.html" target="frame">상품1</a>
+<a href="prod2.html" target="frame">상품2</a>
+<a href="prod3.html" target="frame">상품3</a><br>
+<iframe name="frame"></iframe><br>
+<!-- 
+video
+html5 부터 서버내의 동영상,오디오 파일을 실행시킬수 있음
+속성
+controls : 하단에 실행관련 제어 툴
+autoplay : 자동 실행
+muted : 음소거
+loop : 반복재생
+ -->
+<video src="media/bear.mp4" width="300" height="300" controls autoplay="autoplay" muthed="muthed" loop=""></video>
+</body>
+<script type="text/javascript">
+	var tab = document.querySelector("#tab");
+	var addcol = document.querySelector("#col");
+	var addrow = document.querySelector("#row");
+	var colCnt = 1;
+	var rowCnt = 1;
+	function add(row,col){
+		var show = "";
+		var cnt = 1;
+		for(var rcnt=1;rcnt<=row;rcnt++){
+			show += "<tr>";
+			for(var ccnt=1;ccnt<=col;ccnt++){
+				show += "<td>"+(cnt++)+"</td>";
+			}
+			show += "</tr>";
+		}
+		tab.innerHTML = show;
+	}
+	addcol.onclick = function(){
+		colCnt++;
+		add(rowCnt,colCnt);
+	}
+	addrow.onclick = function(){
+		rowCnt++;
+		add(rowCnt,colCnt);
+	}
+	function call(str){
+		alert("호출된 내용"+str);
+	}
+	function go(){
+		location.href="http://www.googl.com";
+	}
+</script>
+</html>

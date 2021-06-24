@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	선택자 : 아이디,클래스,태그,[속성=속성값] 으로 선택하여 속성과 속성값을 적용할 부분을
+			상단에 선언
+	간단한 속성과 속성값
+	width : 넓이
+	height : 높이
+	margin : 여백
+	padding : 글자/내용과 border의 사이
+	border : padding과 margin사이의 공간
+	background : 배경색상
+	float : 순서 정렬을 해당방향으로 처리
+	clear : 위에 순서정렬 float의 설정을 취소처리하는 옵션
+*/
+	html, body{
+		margin : 0px;
+		padding : 0px;
+		height : 100%;
+	}
+	header{
+		width : 100%;
+		height : 300px;
+		background : blue;
+	}
+	nav{
+		width : 15%;
+		height : 700px;
+		float : left;
+		background : green;
+	}
+	section{
+		width : 70%;
+		height : 700px;
+		float : left;
+	}
+	aside{
+		width : 15%;
+		height : 700px;
+		float : left;
+		background : orange;
+	}
+	footer{
+		width : 100%;
+		height : 15%;
+		background : red;
+		clear : both;
+	}
+	form{
+		height : 300px;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<!-- 
+audio
+html5에선 video와 마찬가지로 audio파일을 넣고 실행시킬수있다
+단 크롬에선 보안상 autoplay 기능은 작동하지 않음
+-->
+<audio src="media/EmbraceableYou.mp3" controls autoplay="autoplay" loop></audio>
+<!-- 
+semantic 태그
+html5의 웹 문서의 구조화 태그
+header : 머릿말,페이지 제목 등 들어가는 부분
+nav : 하이퍼링크,다른페이지로 이동하는 네비게이션 바
+section : 본문파트
+article : 본문과는 연관이 있지만 독립적인 콘텐츠 파트
+aside : 본문에서 약간 벗어난 노트나 팁
+footer : 꼬리말 영역, 주로 저자나 저작권 정보
+-->
+<header><h2>머릿말</h2></header>
+<nav>
+	네비게이션바
+	<ul>
+		<li><a href="http://www.naver.com">네이버</a></li>
+		<li><a href="http://www.daum.net">다음</a></li>
+		<li><a href="http://www.google.com">구글</a></li>
+	</ul>
+</nav>
+<section>본문</section>
+<aside>팁</aside>
+<footer>꼬리말</footer>
+<!-- 
+form 
+데이터 전송 태그
+내부에 input태그들의 내용을 name을 key값으로 사용 value값을 전송
+전송은 input태그의 submit타입을 사용
+input 요소 하위에 type 따른 요소 객체 선언
+	type="button" 버튼 모양
+	value="버튼의 레이블" 처리
+	type="click" 다중선택의 ckeckbox
+	type="image" 이미지 형태 선택
+	type="password" 패스워드 입력 형태 생성
+	type="radio" 라디오 버튼 생성
+	type="reset" 초기화
+	type="submit" 제출 버튼 생성
+
+-->
+<h2>form태그를 이용한 데이터 전송</h2>
+<hr>
+<form action="a04_0624.jsp">
+	이메일 <input type="text" name="email"><br>
+	비밀번호 <input type="password" name="pass"><br>
+	<input type="submit" value="로그인">
+</form>
+</body>
+<script type="text/javascript">
+	document.querySelector("audio").play();
+</script>
+</html>

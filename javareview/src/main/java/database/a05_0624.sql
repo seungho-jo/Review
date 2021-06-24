@@ -46,3 +46,4 @@ UPDATE emp100
 	SET comm = 100
 	WHERE comm is null;
 SELECT * FROM emp100;
+COMMIT;

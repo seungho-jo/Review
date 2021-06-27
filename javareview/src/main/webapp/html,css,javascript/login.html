@@ -3,16 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+tr:nth-child(4) {
+	text-align: center;
+}
+</style>
 <script type="text/javascript">
-
+	function check() {
+		
+		if (document.frm.id.value != "" && document.frm.pass.value != "") {
+			alert("로그인");
+		} else if (document.frm.id.value == "") {
+			alert("아이디를 입력해주세요");
+			document.frm.id.focus();
+		} else if (document.frm.pass.value == "") {
+			alert("비밀번호를 입력해주세요");
+			document.frm.pass.focus();
+		}
+	}
 </script>
 </head>
 <body>
-아이디 <input type="text"><br>
-비밀번호 <input type="password">
-<input type="button" value="회원가입">
+	<form name="frm" action="showLogin.jsp">
+		<table border>
+			<tr>
+				<th colspan="2">로그인</th>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td><input id="id" type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input id="pass" type="text" name="pass"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="로그인" onclick="check()"></td>
+			</tr>
+		</table>
+	</form>
 </body>
 <script type="text/javascript">
-
+	
 </script>
 </html>

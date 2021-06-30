@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# 선택자
+body안에 지정된 고유이름으로 선택하여 css 속성을 적용하게 한다
+종류
+	- * : 전체
+	- 태그 선택자 : 태그명
+	- 아이디 선택자 : #아이디명
+	- 클래스 선택자 : .클래스명
+	- 속성 선택자 : [속성명=속성값]
+	- 후손 선택자 : 
+		1) 상위계층 하위계층
+		2) 상위계층>하위계층
+	- 가상선택자 : 사용자의 반응으로 생성되는 가상의 선택자, :선택자명 으로 사용
+		반응선택자
+		1) :hover - 사용자가 마우스 커서를 올린 태그
+		2) :active - 사용자가 마우스를 클릭한 태그
+		상태 선택자
+		1) :checked - 해당 선택자가  checked가 되었을때, 처리할 내용에 대한 부분을 의미
+				주로 type="radio|checkbox"를 사용하였을 때, 활용된다
+		2) :focus - 해당 선택자에  focus를 위치시켰을 때, 활용된다
+				form 하위의 입력 요소객체를 사용할 때 쓰인다
+		3) :enabled - 해당 선택자의 요소객체가 활성화 되었을 때, 처리할 css속성
+				설정시 활용된다
+		4) :disabled - 해당 선택자의 요소객체가 비활성화 되었을, 때 처리할 css속성
+				설정시 활용된다
+*/
+h2 {
+	margin-top: 50px;
+}
+
+h2:active {
+	text-align: center;
+}
+
+hr:hover {
+	border: 5px solid red;
+}
+
+p {
+	color: pink;
+}
+
+#li2 {
+	background-color: hotpink;
+}
+
+.li3 {
+	font-size: 30px;
+}
+
+[type=text]:focus {
+	background-color: blue;
+}
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<h2>선택자</h2>
+	<hr>
+	<div>
+		<ul>
+			<li><p>태그 선택자</p></li>
+			<li id="li2">아이디 선택자</li>
+			<li class="li3">클래스 선택자</li>
+			<li><input type="text" value="속성 선택자"></li>
+		</ul>
+		<input type="radio" name="gender"><span>남자</span> 
+		<input type="radio" name="gender"><span>여자</span><br>
+		<input type="checkbox" name="hobby"><span>축구</span>
+		<input type="checkbox" name="hobby"><span>영화감상</span>
+		<input type="checkbox" name="hobby"><span>노래</span>
+		<input type="checkbox" name="hobby"><span>게임</span><br>
+		<div id="result"></div>
+		<input type="button" value="추가">
+	</div>
+</body>
+<script type="text/javascript">
+	var btn = document.querySelector("[type=button]");
+	var result = document.querySelector("#result");
+	var ckObj = document.querySelectorAll("[type=radio], [type=checkbox]");
+	for (var cnt = 0; cnt < ckObj.length; cnt++) {
+		ckObj[cnt].onclick = function() {
+			var show = "";
+			var ckObj2 = document.querySelectorAll("[type=radio]:checked+span, [type=checkbox]:checked+span");
+			for(var idx=0;idx<ckObj2.length;idx++){
+				show += ckObj2[idx].innerHTML+",";
+			}
+			btn.onclick = function(){
+				result.innerText = show;
+			}
+		}
+	}
+</script>
+</html>

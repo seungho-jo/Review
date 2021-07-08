@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	height : 700px;
+}
+h2 {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#graph {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+#graph1 {
+	width: 500px;
+	text-align: center;
+	padding: 0 50px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#graph1 h4 {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#graph2 {
+	width: 500px;
+	text-align: center;
+	padding: 0 50px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#graph2 h4 {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+</style>
+<script type="text/javascript">
+function callResize()  {  
+    var height = document.body.scrollHeight;  
+    parent.resizeTopIframe(height);  
+}  
+window.onload =callResize;
+</script>
+<script src="Chart.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>메인 페이지</h2>
+	<div id="graph">
+		<div id="graph1">
+			<h4>주간 방문 회원수</h4>
+			<canvas id="myChart" width="400px" height="400px" style="display: inline"></canvas>
+		</div>
+		<div id="graph2">
+			<h4>주간 가입 회원수</h4>
+			<canvas id="myChart2" width="400px" height="400px" style="display: inline"></canvas>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var currentDay = new Date();
+	var theYear = currentDay.getFullYear();
+	var theMonth = currentDay.getMonth();
+	var theDate = currentDay.getDate();
+	var theDayOfWeek = currentDay.getDay();
+
+	var thisWeek = [];
+
+	for (var i = 0; i < 7; i++) {
+		var resultDay = new Date(theYear, theMonth, theDate
+				+ (i - theDayOfWeek));
+		var yyyy = resultDay.getFullYear();
+		var mm = Number(resultDay.getMonth()) + 1;
+		var dd = resultDay.getDate();
+
+		mm = String(mm).length === 1 ? '0' + mm : mm;
+		dd = String(dd).length === 1 ? '0' + dd : dd;
+
+		thisWeek[i] = yyyy + '-' + mm + '-' + dd;
+	}
+
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type : 'bar',
+		data : {
+			labels : [ '일', '월', '화', '수', '목', '금', '토' ],
+			datasets : [ {
+				label : '회원수',
+				data : [ '1', '0', '3', '4', '2', '1', '6' ],
+				fill : false,
+				borderColor : [
+
+				],
+				pointBackgroundColor : [
+
+				],
+				borderWidth : 1
+			} ]
+		},
+		options : {
+			responsive : false,
+			scales : {
+				yAxes : [ {
+					ticks : {
+						beginAtZero : true
+					}
+				} ]
+			},
+		}
+	});
+	var ctx = document.getElementById('myChart2').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type : 'bar',
+		data : {
+			labels : [ '일', '월', '화', '수', '목', '금', '토' ],
+			datasets : [ {
+				label : '회원수',
+				data : [ '5', '2', '1', '4', '2', '3', '5' ],
+				fill : false,
+				borderColor : [
+
+				],
+				pointBackgroundColor : [
+
+				],
+				borderWidth : 1
+			} ]
+		},
+		options : {
+			responsive : false,
+			scales : {
+				yAxes : [ {
+					ticks : {
+						beginAtZero : true
+					}
+				} ]
+			},
+		}
+	});
+</script>
+</html>

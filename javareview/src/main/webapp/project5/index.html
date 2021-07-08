@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body, html {
+	width: 100%;
+	height: 100%;
+}
+section {
+	margin: 200px 30%;
+}
+h1 {
+	font-size : 40px;
+}
+form {
+	border : 1px solid #BDBDBD;
+	height : 200px;
+	text-align : center;
+}
+table{
+	margin : 0 auto;
+	padding-top : 50px;
+}
+#button{
+	height : 100%;
+	font-size : 20px;
+	color : white;
+	background : black;
+	cursor : pointer;
+}
+span {
+	color : orange;
+}
+p {
+	font-weight : bold;
+	font-size : 25px;
+}
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<section>
+		<h1>로그인</h1>
+		<p>
+			<span>안녕하세요!</span><br>SARUWA 관리자 페이지입니다
+		</p>
+		<form action="main.jsp"> 
+			<table>
+				<tr>
+					<td width="100px" height="30px">아이디</td>
+					<td width="200px" height="30px"><input type="text" name="id"  height="30px"></td>
+					<td rowspan="2" height="60px"><input id="button" type="submit" value="로그인"></td>
+				</tr>
+				<tr>
+					<td width="100px" height="30px">비밀번호</td>
+					<td height="30px"><input type="password" name="pass"  height="100%"></td>
+				</tr>
+			</table>
+		</form>
+	</section>
+</body>
+<script type="text/javascript">
+	var id = document.querySelector("[name=id]");
+	var pass = document.querySelector("[name=pass]");
+	var btn = document.querySelector("#button");
+	var frm = document.querySelector("form");
+	btn.onclick = function(){
+		if(id.value != "" && pass.value != ""){
+			if(id.value == "himan" && pass.value == "1111"){
+				alert("로그인 성공");
+			}else{
+				alert("로그인 실패");
+				frm.action="index.html";
+			}
+		}else if (id.value == "") {
+			alert("아이디를 입력해주세요");
+			id.focus();
+			frm.action="index.html";
+		} else if (pass.value == "") {
+			alert("비밀번호를 입력해주세요");
+			pass.focus();
+			frm.action="index.html";
+		}
+	}
+</script>
+</html>

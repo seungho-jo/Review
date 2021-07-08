@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h3{
+		display : inline-block;
+		
+	}
+	section{
+		margin-left : 30px;
+		width : 35%;
+		height : auto;
+	}
+	section h2{
+		border-bottom : 2px solid black;
+	}
+	section table{
+		width : 500px;
+		height : 800px;
+		border-collapse: collapse;
+	}
+	section table tr:nth-child(-n+8), section table tr:nth-child(-n+8) td{
+		border : 1px solid black;
+	}
+	section table tr:nth-child(9) td{
+		text-align : center;
+	}
+	section table tr td input{
+		margin-left : 10px;
+		font-size : 17px;
+	}
+	section table tr:nth-child(7) td{
+		height : 84.86px;
+	}
+	section table tr td h3:first-child{
+		margin-left : 10px;
+	}
+	section [type=button]{
+		background-color : black;
+		color : white;
+		border-radius : 10px / 10px;
+		cursor : pointer;
+		width : 60px;
+		height : 35px;
+	}
+</style>
+<script type="text/javascript">
+function callResize()  {  
+    var height = document.body.scrollHeight;  
+    parent.resizeTopIframe(height);  
+}  
+window.onload =callResize;
+</script>
+</head>
+<body>
+	<section>
+		<h2>상품등록</h2>
+		<table>
+			<colgroup>
+				<col width="20%">
+				<col width="80%">
+			</colgroup>
+			<tr>
+				<th>상품종류</th>
+				<td><input type="text" id="kind"></td>
+			</tr>
+			<tr>
+				<th>상품이름</th>
+				<td><input type="text" id="name"></td>
+			</tr>
+			<tr>
+				<th>브랜드</th>
+				<td><input type="text" id="brand"></td>
+			</tr>
+			<tr>
+				<th>색상</th>
+				<td><input type="text" id="color"></td>
+			</tr>
+			<tr>
+				<th>가격</th>
+				<td><input type="text" id="price"></td>
+			</tr>
+			<tr>
+				<th>입고일</th>
+				<td><input type="text" id="date"></td>
+			</tr>
+			<tr>
+				<th>사이즈</th>
+				<td>
+					<h3>S</h3><input type="checkbox" value="S">
+					<h3>M</h3><input type="checkbox" value="M">
+					<h3>L</h3><input type="checkbox" value="L">
+				</td>
+			</tr>
+			<tr>
+				<th>재고량</th>
+				<td><input type="text" id="cnt"></td>
+			</tr>
+			<tr >
+				<td colspan="2"><input type="button" value="수정"></td>
+			</tr>
+		</table>
+	</section>
+</body>
+<script type="text/javascript">
+	var btn = document.querySelector("[type=button]");
+	var size = document.querySelector("[type=checkbox]");
+	var kind = document.querySelector("#kind");
+	var pname = document.querySelector("#name");
+	var brand = document.querySelector("#brand");
+	var color = document.querySelector("#color");
+	var price = document.querySelector("#price");
+	var date = document.querySelector("#date");
+	var cnt = document.querySelector("#cnt");
+	btn.onclick = function(){
+		if(kind.value == ""){
+			alert("상품종류를 입력하세요");
+			return;
+		}
+		if(pname.value == ""){
+			alert("상품이름를 입력하세요");
+			return;
+		}
+		if(brand.value == ""){
+			alert("브랜드를 입력하세요");
+			return;
+		}
+		if(color.value == ""){
+			alert("색상을 입력하세요");
+			return;
+		}
+		if(price.value == ""){
+			alert("가격을 입력하세요");
+			return;
+		}
+		if(date.value == ""){
+			alert("입고일 입력하세요");
+			return;
+		}
+		if(cnt.value == ""){
+			alert("재고량 입력하세요");
+			return;
+		}
+		self.location = "productList.html";
+	}
+</script>
+</html>

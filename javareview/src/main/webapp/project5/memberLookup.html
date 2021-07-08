@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	section form select{
+		margin : 20px 0 35px 886px;
+		font-size : 15px;
+	}
+	section table{
+		width : 1000px;
+		height : 500px;
+	}
+
+	section table tr:nth-child(1){
+		background-color : black;
+		color : white;
+		font-size : 20px;
+		font-weight : bold;
+	}
+	section table .list{
+		text-align : center;
+		font-size : 17px;
+	}
+	section #bottom_bar{
+		margin : 20px 0 0 420px;
+	}
+	section #bottom_bar a{
+		width : 40px;
+		height : 25px;
+		text-decoration : none;
+		color : white;
+		background-color : black;
+		border : 0.5px solid black;
+		border-radius : 20px / 20px;
+		text-align : center;
+		display : inline-block;
+	}
+</style>
+<script type="text/javascript">
+function callResize()  
+{  
+    var height = document.body.scrollHeight;  
+    parent.resizeTopIframe(height);  
+}  
+window.onload =callResize;
+</script>
+</head>
+<body>
+	<section>
+		<form action="memberLookup.html">
+			<select name="sort">
+				<option value="0">선택해주세요</option>
+				<option value="오름차순">오름차순</option>
+				<option value="내림차순">내림차순</option>
+			</select>
+		</form>
+		<table border>
+			<tr>
+				<th>번호</th>
+				<th>아이디</th>
+				<th>이메일</th>
+				<th>휴대폰번호</th>
+				<th>동의여부</th>
+				<th>가입날자</th>
+			</tr>
+			<tr class="list">
+				<td>1</td>
+				<td>goodgirl</td>
+				<td>goodgirl@gmail.com</td>
+				<td>010-1263-5421</td>
+				<td>허용</td>
+				<td>2021-06-30</td>
+			</tr>
+			<tr class="list">
+				<td>2</td>
+				<td>hihiman</td>
+				<td>hihiman@daum.net</td>
+				<td>010-5498-7831</td>
+				<td>허용</td>
+				<td>2021-06-10</td>
+			</tr>
+			<tr class="list">
+				<td>3</td>
+				<td>tjjjnjs12</td>
+				<td>tjjjnjs12@naver.com</td>
+				<td>010-7913-5531</td>
+				<td>비허용</td>
+				<td>2021-05-30</td>
+			</tr>
+			<tr class="list">
+				<td>4</td>
+				<td>soisoi99</td>
+				<td>soisoi99@naver.com</td>
+				<td>010-4841-3154</td>
+				<td>비허용</td>
+				<td>2020-06-30</td>
+			</tr>
+			<tr class="list">
+				<td>5</td>
+				<td>jsh95320</td>
+				<td>jsh95320@naver.com</td>
+				<td>010-4538-7813</td>
+				<td>허용</td>
+				<td>2020-1-21</td>
+			</tr>
+		</table>
+		<div id="bottom_bar">
+			<a href="#">prev</a>
+			<a href="#">1</a>
+			<a href="#">next</a>
+		</div>
+	</section>
+</body>
+<script type="text/javascript">
+	
+</script>
+</html>

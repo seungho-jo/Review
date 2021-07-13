@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# border-radius : 박스 모서리 테두리 둥굴기 설정
+border-radius : 왼쪽상단 오른쪽상단 오른쪽하단 왼쪽하단
+border-radius : 전방향
+# background-img : 배경이미지
+관련 효과
+background-repeat 
+	no-repeat 속성은 반복되지 않게 처리
+	repeat-y : 아래 위로 반복되어 처리
+	repeat-x : 오른쪽 왼쪽으로 반복되어 처리
+background-position : 배경 이미지 위치 (x축 y축)
+background-size : 배경 이미지 크기
+# text-shadow : 글씨의 그림자 효과
+속성값 형식
+text-shadow: h-shadow v-shadow blur-radius color|none
+h-shadow, v-shadow : 원본 텍스트와 그림자 텍스트 사이요 수평/수직거리
+blur-radius : 흐릿한 그림자를 만드는 효과로 번지게 하는 길이
+color : 색상
+none : 그림자 효과 없음
+# display 해당 요소객체를 새라인으로 시작할지, 기존 라인에 포함될지, 두가지 내용(새라인, 기존라인)을
+	포함하는 내용을 처리할 지를 결정
+속성
+block, inline, inline-block, none, hidden
+# position : 태그들의 배치 순서 관리
+종류
+	정적 배치 : position : static (기본값)
+	상대 배치 : position : relative : 왼쪽이나 상단의 요소객체 기준으로 배치를 처리
+	절대 배치 : position : absolute : 화면전체의 왼쪽 상단을 기준으로 배치 처리
+	고정 배치 : position : fixed : 스크롤을 아래로 웹페이지 가더라도 특정한 위치에 지정
+	유동 배치 : float : left/right
+# z-index : div의 및 요소객체가 position을 absolute로 처리되었을 때, 화면에 우선순위를 지정
+	값이 클수록 위에 나타냄
+# table 꾸미기
+border-collapse : collapse
+		테이블에 종속된 td,th의 중복적인 테두리를 합치는 옵션
+padding : 글자와 border의 사이 간격 설정
+*/
+#radius1{
+	width : 200px;
+	height : 200px;
+	border : 1px solid black;
+	border-radius : 20px;
+}
+#radius2{
+	width : 200px;
+	height : 200px;
+	border : 1px solid black;
+	border-radius : 20px 40px 40px 20px;
+}
+#backimg{
+	width : 300px; 
+	height : 300px;
+	background-color : skyblue;
+	color : white;
+	background-image : url(media/Elvis.png);
+	background-size : 50px 50px;
+	background-repeat : repeat-y;
+	background-position : center center;
+}
+#style{
+	font-size : 50px;
+	text-shadow : 5px 5px 2px red;
+}
+.inl{
+	display : inline;
+	width : 100px;
+	height : 100px;
+	background-color : yellow;
+	margin : 10px;
+}
+.blo{
+	display : block;
+	width : 100px;
+	height : 100px;
+	background-color : yellow;
+	margin : 10px;
+}
+.inl_blo{
+	display : inline-block;
+	width : 100px;
+	height : 100px;
+	background-color : yellow;
+	margin : 10px;
+}
+#cards{
+	position : relative;
+	height : 300px;
+	width : 300px;
+}
+img{
+	position : absolute;
+}
+#card1{
+	left : 10px;
+	top : 20px;
+	z-index : 3;
+}
+#card2{
+	left : 40px;
+	top : 30px;
+	z-index : 4;
+}
+#card3{
+	left : 80px;
+	top : 40px;
+	z-index : 5;
+}
+#card4{
+	left : 120px;
+	top : 50px;
+	z-index : 6;
+}
+#tab{
+	clear : both;
+	border-collapse : collapse;
+	border : 1px solid black; 
+}
+th, td{
+	border : 1px dotted red;
+	padding : 5px;
+}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div id="radius1">전방향</div>
+	<div id="radius2">둥굴기 지정</div>
+	<div id="backimg">배경이미지</div>
+	<p id="style">text-shadow</p>
+	<div class="inl">inline</div>
+	<div class="inl">inline</div>
+	<div class="blo">block</div>
+	<div class="blo">block</div>
+	<div class="inl_blo">inline-block</div>
+	<div class="inl_blo">inline-block</div><br>
+	<div id="cards">
+		<img id="card1" src="media/spade-A.png" width="100" height="100">
+		<img id="card2" src="media/spade-2.png" width="100" height="100">
+		<img id="card3" src="media/spade-3.png" width="100" height="100">
+		<img id="card4" src="media/spade-7.png" width="100" height="100">
+	</div>
+	<table id="tab">
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>80</td>
+			<td>70</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>80</td>
+			<td>70</td>
+			<td>95</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>80</td>
+			<td>70</td>
+			<td>95</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	var backimg = document.querySelector("#backimg");
+	backimg.onclick = function(){
+		this.style.backgroundRepeat = "repeat-x";
+	}
+	/*
+	식별자 : 변수에 이름을 붙을 때 사용되는 단어
+	선언규칙
+	키워드 사용 금지
+	숫자로 시작하면 안된다
+	특수문자는 $,_ 만 허용된다
+	중간에 공백문자는 허용하지 않는다
+	''(홋따움표) ""(쌍따움표) -> 둘다 문자열 데이터 사용할때 사용
+	홋따움표안에 쌍따움표, 쌍따움표안에 홋따움표는 가능하나
+	"'"' 이러한 형태는 불가능
+	"\"또다른 사용법\"" 이런식으로 역슬래쉬를 걸어주면 사용 가능하다
+	데이터 입력처리
+	confirm("출력문자열") : 확인시 true/취소시 false값 리턴
+	prompt("출력문자열","입력초기값") : 확인시 입력된값 리턴, 취소시 문자열 null 리턴
+	데이터 유형
+	함수로 확인 : typeof(변수명)
+	문자열(String) : var strVar = '홍길동';
+	숫자형(Number) : var numVar = 25;
+	논리형(boolean) : var isOver = numVar>=70;
+	함수형(function) : var funVar = function(){};
+	객체형(object) : var objVar = {name:'홍길동'}
+	js에서 + 두가지 기능
+	1) 문자열을 연결 및 누적 처리
+	2) 숫자형 합산 처리
+		cf) 주의 : js에서 사칙연산의 +(plus)를 제외한 모든 연산자는
+			자동형변환을 하고 있지만, +는 문자열 연결이라는 기능 때문에
+			자동 형변환을 하지 않고 연결처리가 된다
+	*/
+	var pname = prompt("이름을 입력하세요");
+	var price = prompt("가격을 입력하세요");
+	var cnt = prompt("갯수를 입력하세요");
+	var flag = confirm("화면에 출력하시겠습니까?");
+	if(flag){
+		document.write(`<h3>이름 : ${pname}</h3>`);
+		document.write(`<h3>가격 : ${price}</h3>`);
+		document.write(`<h3>갯수 : ${cnt}</h3>`);
+	}else{
+		console.log("이름 : "+pname);
+		console.log("가격 : "+price);
+		console.log("갯수 : "+cnt);	
+	}
+	var proName = "사과";
+	var proPrice = 3000;
+	var buyMoney = 5000;
+	var proFlag = buyMoney>proPrice;
+	var sale = function(price){
+		return discount = price*0.9;
+	}
+	var obj = {
+		pname : proName, 	
+		price : proPrice, 
+		flag : proFlag,
+		buy : function(money){
+			return money-this.price;
+		}
+	}
+	document.write(`<h3>이름 : ${obj.pname}</h3>`);
+	document.write(`<h3>가격 : ${obj.price}</h3>`);
+	document.write(`<h3>살수있는가? : ${obj.flag}</h3>`);
+	document.write(`<h3>나머지 : ${obj.buy(buyMoney)}</h3>`);
+	var num01 = prompt("첫번쨰 숫자");
+	var num02 = prompt("첫번쨰 숫자");
+	show+="<h2>"+(num01+num02)+"</h2>";
+	show+="<h2>"+(num01-num02)+"</h2>";
+	show+="<h2>"+(num01*num02)+"</h2>";
+	show+="<h2>"+(num01/num02)+"</h2>";
+	body.innerHTML=show;
+</script>
+</html>

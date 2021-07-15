@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div id="showRainbow"></div>
+	<table id="tab" border></table>
+</body>
+<script type="text/javascript">
+/*
+# 형변환
+문자열 -> 숫자형
+1) Number() -> 정수,실수 둘다 변환가능 단 숫자형태가아닌문자가 있을경우 에러 발생
+2) parseInt() -> 정수, 숫자형태가아닌문자가 있을경우 문자는 제거한후 정수만 출력
+3) parseFloat() -> 실수, 숫자형태가아닌문자가 있을경우 문자는 제거한후 실수만 출력
+테스트
+isNaN() -> 숫자형이 아닌 문자열은 true표시
+번외
+eval(문자열) : 문자열로 된 숫자형들의 연산을 해줌
+조건/반복 문
+if,switch case,while,do while,for 문은 자바와 동일
+for in 구문 -> 객체,배열 의 내용들을 꺼낼때 유용
+형식
+for(var 변수명 in 객체,배열명){}
+*/
+	var strNum = "180.1";
+	var strNum2 = "180.1cm";
+	console.log(Number(strNum));
+	console.log(parseInt(strNum));
+	console.log(parseFloat(strNum));
+	console.log(Number(strNum2));
+	console.log(parseInt(strNum2));
+	console.log(parseFloat(strNum2));
+	console.log(isNaN(Number(strNum2)));
+	var result = Number(prompt("성적을 입력하세요"));
+	console.log(typeof(result)); // 숫자가 아닌 문자입력시 number형태
+	if(result.toString() == "NaN"){ // 결과값을 문자열로 변형후 비교
+		console.log("다시입력하세요");
+	}else{
+		if(result >= 90){
+			console.log('A등급 입니다');
+		}else if(result >= 80){
+			console.log('B등급 입니다');
+		}else if(result >= 70){
+			console.log('C등급 입니다');
+		}else if(result >= 60){
+			console.log('D등급 입니다');
+		}else{
+			console.log('F등급 입니다');
+		}
+	}
+	var div = document.querySelector("#showRainbow");
+	var rainbow = {red:"white",orange:"white",yellow:"white",green:"white",blue:"white",indigo:"white",purple:"white"};
+	var show = "";
+	for(var pro in rainbow){
+		show += "<h3 align='center' style='background-color:"+pro+";color:"+rainbow[pro]+"'>"+pro+"</h3>";
+	}
+	div.innerHTML = show;
+	var tab = document.querySelector("#tab");
+	var prod = ['사과','딸기','배'];
+	var show = "";
+	tab.innerHTML = "<tr><th>번호</th><th>물건명</th></tr>";
+	for(var idx in prod){
+		show += "<tr><td>"+(Number(idx)+1)+"</td><td>"+prod[idx]+"</td></tr>";
+	}
+	tab.innerHTML += show;
+</script>
+</html>

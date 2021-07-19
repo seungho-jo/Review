@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+# for(단위변수 of 배열)
+	단위객체나 변수
+# 함수
+1. 익명함수
+var 함수명 = function(매개변수){return 리턴할데이터;}
+2. 선언적 함수
+함수명();
+function 함수명(){return 리턴할데이터;}
+선언적 함수는 함수명이 선언되기 전에 호출하여도 호출처리됨
+# arguments
+함수를 정의할 때, 여러가지 매개변수를 arguments라는 객체에 배열로
+가져와서 처리할 수 있다.
+# 내장함수
+1. setTimeout(함수,1/1000초)
+	해당 시간후 정의된 함수가 수행 처리하는 내장함수
+	해제 : clearTimeout(변수명)
+2. setInteval(반복적으로 수행할 함수, 반복적인 시간1/1000);
+	지정마다 반복적으로 함수 수행
+	해제 : clearInterval(변수명)
+3. eval("문자열 코드") : 매개변수로된 문자열 코드를 실행코드로 변환하여 실행처리
+4. isFinite() : 무한대 에러에 대한 여부 확인
+5. 배열.forEach(function (매개변수1,매개변수2,매개변수3){
+	매개변수1 : 배열의 단위 데이터
+	매개변수2 : 배열의 index
+	매개변수3 : 배열전체
+});
+# 초기값이 있는 가변함수
+함수명(매개1, 매개2=매개2가 없을때 초기,매개3=매개3이 없을떄 초기값)
+function 함수명(기본매개1,...가변변수배열)
+# 화살표 함수 (es6)
+함수명 = (매개변수1, 매개변수2) => 리턴값;
+함수명(데이터1, 데이터2)
+# 객체
+배열 내부에 있는 값을 요소라고 하며, 객체 내부에 있는 값을 속성이라한다
+실수,정수,문자열,bool,함수(메서드)가 들어갈수있음
+속성명 in 객체 -> 속성값
+with(객체){
+	속성1
+	속성2
+}
+*/
+</script>
+</head>
+<body>
+	<h2 onclick="sumAll('사과')">매개변수1개</h2>
+	<h2 onclick="sumAll('사과','바나나')">매개변수2개</h2>
+	<h2 onclick="sumAll(3000,2000,3)">매개변수3개</h2>
+	<h2>10초타이머</h2>
+	<div id="timer"></div>
+	<h2>카운트다운</h2>
+	<div id="countDown"></div>
+	<h2>JavaScript 텍스트기</h2>
+	<textarea rows="5" cols="50"></textarea><br>
+	<input type="button" value="실행">
+	<h2 onclick="shows()">학생정보</h2>
+	<table width="70%" border></table>
+</body>
+<script type="text/javascript">
+	var data1 = [5000,4000,3000];
+	for(var idx of data1){
+		console.log(idx);
+	}
+	var show1 = function(){
+		return "익명함수";
+	}
+	console.log(show1());
+	console.log(show2());
+	function show2(){
+		return "선언적 함수";
+	}
+	function sumAll(){
+		for(var idx in arguments){
+			console.log(arguments[idx]);
+		}
+	}
+	var timer = document.querySelector("#timer");
+	var time1 = setTimeout(function(){
+		timer.innerHTML += `10초경과`;
+		clearTimeout(time1);
+	},10000);
+	var num1 = 10;
+	var ctDown = document.querySelector("#countDown");
+	ctDown.innerHTML = num1;
+	var time2 = setInterval(function(){
+		num1--;
+		ctDown.innerHTML = `${num1}`;
+		if(num1 < 1){
+			clearInterval(time2);
+		}
+	},1000);
+	var textarea = document.querySelector("textarea");
+	var btn = document.querySelector("[type=button]");
+	btn.onclick = function(){
+		eval(textarea.value);
+		textarea.value = "";
+	}
+	var num01 = 1/0;
+	console.log(num01+":"+isFinite(num01));
+	var data2 = [{name:'홍길동',kor:80,eng:90,math:70},
+				{name:'김길동',kor:100,eng:70,math:70},
+				{name:'신길동',kor:70,eng:85,math:65}];
+	var show = "<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>";
+	function shows(){
+		var tab = document.querySelector("table");
+		data2.forEach(function(datas){
+			show += "<tr>";
+			for(var idx in datas){
+				show += "<td>"+datas[idx]+"</td>";
+			}
+			show += "</tr>";
+		});
+		tab.innerHTML = show;
+	}
+	function product(company,price=0,size=0){
+		console.log("회사: "+company+", 가격: "+price+", 크기: "+size);
+	}
+	product("삼성");
+	product("삼성",500);
+	product("삼성",500,10000);
+	function buyProd(name,...Products){
+		console.log("구매물건");
+		console.log("물건명: "+name);
+		Products.forEach(function(data){
+			console.log(data);
+		});
+	}
+	buyProd("컴퓨터부품","i7","16g","1t");
+	var plus = (num01, num02) => num01+num02;
+	var minus = (num01, num02) => num01-num02;
+	var curcle = (num01, num02) => num01*num02;
+	var devine = (num01, num02) => num01/num02;
+	console.log("합산:"+plus(25,30));
+	console.log("뺄셈:"+minus(25,20));
+	console.log("곱하기:"+curcle(25,2));
+	console.log("나누기:"+devine(30,6));
+</script>
+</html>

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+body{
+	margin : 0;
+}
+section{
+	width : 975px;
+	height : 100%;
+	margin : 0 auto;
+	min-height : 800px;
+}
+section form h2{
+	display : inline-block;
+}
+section form [value="게시"]{
+	float : right;
+	margin : 20px 0;
+	background-color : #22FF7B;
+	color : white;
+	font-size : 17px;
+	border : 1px solid #22FF7B;
+	border-radius : 15%;
+	cursor : pointer;
+}
+section form #clear{
+	clear : both;	
+}
+section form select{
+	border-style: none;
+}
+section form textarea{
+	width : 945px;
+	height : 200px;
+	padding : 15px;
+	resize: none;
+}
+section form #View_area{
+	position:relative; 
+	width: 150px;
+	height: 150px; 
+	color: black; 
+	border: 0px solid black; 
+	margin-bottom : 30px;
+}
+section form label { 
+	display: inline-block; 
+	padding: .5em .75em; 
+	color: #999; 
+	font-size: inherit; 
+	line-height: normal; 
+	vertical-align: middle;
+	background-color: #fdfdfd; 
+	cursor: pointer; 
+}
+section form #profile_pt{
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0;
+	margin: -1px; 
+	overflow: hidden; 
+	clip:rect(0,0,0,0); 
+	border: 0;
+}
+section form [value="check"]{
+	float : right;
+	background-color : #22FF7B;
+	color : white;
+	font-size : 17px;
+	border : 1px solid #22FF7B;
+	border-radius : 15%;
+	cursor : pointer;
+}
+section form [value="clear"]{
+	float : right;
+	background-color : #22FF7B;
+	color : white;
+	font-size : 17px;
+	border : 1px solid #22FF7B;
+	border-radius : 15%;
+	cursor : pointer;
+	margin-left : 10px;
+}

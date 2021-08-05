@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body{
+	margin : 0;
+}
+footer{
+	margin-top : 10px;
+	border-top : 1px solid rgba(0,0,0,0.1);
+	background-color : rgba(0,0,0,0.1);
+}
+footer h2{
+	width : 975px;
+	height : 100px;
+	line-height : 100px;
+	margin : 0 auto;
+}

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+
+
+body{
+	height: 100vh;
+	background: url(../img/summer.jpg) no-repeat center;
+	background-size : cover;
+	display : flex;
+	justify-content: center;
+	align-items : center;
+}
+section {
+	margin: 200px 30%;
+}
+
+form {
+	border : 1px solid #BDBDBD;
+	border-radius: 10px;
+	height : 500px;
+	text-align :center;
+	width:450px;
+	background: white;
+}
+.IdPass .id{
+	margin : 0px auto;
+	padding-top : 30px;
+	width:190px;
+	height:40px;
+}
+
+.IdPass .pass{
+	margin : 0px auto;
+	padding-top:10px;
+	width:190px;
+	height:40px;
+}
+
+
+
+.IdPass .id [name="id"], .pass [name="pass"]{
+	width:185px;
+	height:30px;
+}
+
+/* 회원가입 */
+.IdPass .repass{
+	margin : 0px auto;
+	padding-top:10px;
+	width:190px;
+	height:40px;
+}
+
+.IdPass .pullname{
+	margin : 0px auto;
+	padding-top:10px;
+	width:190px;
+	height:40px;
+}
+
+
+
+.IdPass .repass [name="repass"], .pullname [name="name"]{
+	width:185px;
+	height:30px;
+}
+
+#button{
+	height : 100%;
+	font-size : 20px;
+	color : white;
+	background : black;
+	cursor : pointer;
+}
+span {
+	color : orange;
+}
+p {
+	font-weight : bold;
+	font-size : 25px;
+}
+
+#divScrollMain{
+	
+	margin : 20px auto 12px;
+}
+
+img {
+	display :block; 
+	margin : 0px auto;
+}
+
+div #button{
+	width:190px;
+	height:32px;
+	margin : 10px;
+}
+
+.SchPart{
+	display : block;
+	margin-top : 20px;
+}
+.SchPart .idSch{
+	margin : 40px 20px 0;
+	text-decoration : none;
+}
+.SchPart .pwSch{
+	margin : 40px 0 0 20px;
+	text-decoration : none;
+}
+
+.OR{
+	margin : 20px 40px 10px ;
+}
+
+.OR .orLineor{
+	margin: 0 15px 0 15px;
+}
+
+.joinPart{
+	margin: 20px 0px;
+}
+
+.joinPart .joinSch{
+	text-decoration :none;
+}
+
+/* 회원가입 */
+.loginPart{
+	margin: 15px 15px 0 15px;
+}
+.loginPart .loginSch{
+	text-decoration:none;
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+body{
+	margin : 0;
+}
+.head a{
+	text-decoration : none;
+	color : black;
+}
+header{
+	height : 55px;
+	border-bottom : 1px solid rgba(0,0,0,0.1);
+	
+}
+.head{
+	width : 975px;
+	height : 100%;
+	margin : 0 auto;
+}
+header div #title{
+	display : inline-block;
+	width : 155px;
+	height : 56px;
+	line-height : 55px;
+	padding : 0 430px 0 20px;
+}
+header div #title img{
+	width : 155px;
+	height : 36px;
+	vertical-align:middle;
+}
+header div a{
+	height : 56px;
+	line-height : 55px;
+}
+header div a img{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+}
+a span{
+	font-size: 10px;
+}
+#profile img{
+	border-radius: 70%;
+	overflow: hidden;
+}
+header div form{
+	display : inline-block;
+}
+header div form input{
+	height : 25px;
+	padding-left : 5px;
+	font-size : 12px;
+	text-align : left;
+}
+header div form input:focus{
+	text-align : left;
+}
+header div form input:focus::placeholder{
+	color: transparent;
+}
+.head_left{
+	float:right;
+}
+.head_left #profile{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+	cursor : pointer;
+	border-radius: 70%;
+	overflow: hidden;
+}
+.head_left #refresh{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+	cursor : pointer;
+	border-radius: 70%;
+	overflow: hidden;
+}

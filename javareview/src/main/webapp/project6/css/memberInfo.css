@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+body{
+	margin : 0;
+}
+li{
+	list-style : none;
+	height: 65px;
+}
+li:hover{
+	color:#dbdbdb;
+	font-size: 15px;
+}
+
+#body{
+	width : 975px;
+	height : 100%;
+	margin : 50px auto;
+	text-align : center;
+}
+
+a span{
+	font-size : 14px;
+}
+
+div .box{
+	display : inline-block;
+}
+
+
+#body .userImage{
+	width: 65px;
+	height: 65px;
+	border-radius : 70%;
+	margin-top : 10px;
+	overflow : hidden;
+}
+
+section{
+	width:650px;
+	float : right;
+}
+
+.list table {
+	width : 500px;
+	text-align : center;
+	margin : 0 auto;
+}
+
+.list table th{
+	text-align : right;
+}
+
+table tr{
+	height : 65px;
+}
+
+table td input{
+	width : 340px;
+	height:30px;
+	border: 1px solid #dbdbdb;
+}
+nav {
+	float :left;
+}
+
+nav div{
+	display : flex;
+}
+
+
+nav{
+	border :1px solid #dbdbdb;
+	width : 230px;
+	height : 800px;
+	float : left;
+	margin : 0px;
+}
+
+nav div ul{
+	margin : 15px auto;
+	padding : 0px;
+}
+
+
+#button{
+	height : 100%;
+	font-size : 20px;
+	color : white;
+	background : black;
+	cursor : pointer;
+}
+
